@@ -12,7 +12,7 @@ public class MainPage {
     private By logotypeLiteCart = By.xpath("//*[@class=\"logotype\"]");
 
 
-    public MainPage searchTV() {
+    public MainPage inputLoginAndPassword() {
         Helpers.sendKeys(fieldUsername, userName);
         Helpers.sendKeys(fieldPassword, password);
         Helpers.click(buttonSearch);
