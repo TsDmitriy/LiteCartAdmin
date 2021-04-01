@@ -9,9 +9,9 @@ public class GoToLoginPage {
     private By buttonLogin = By.name("login");
 
 
-    public MainPage getpage() {
+    public LoginPage getpage() {
         Driver.getInstance().get(url);
         Helpers.presenceOfElementLocated(buttonLogin);
-        return new MainPage();
+        return new LoginPage();
     }
 }

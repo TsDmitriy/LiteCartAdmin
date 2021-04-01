@@ -5,7 +5,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import pages.Driver;
 import pages.GoToLoginPage;
-import pages.MainPage;
+import pages.LoginPage;
 
 
 public class TestCase {
@@ -17,7 +17,7 @@ public class TestCase {
 
     @Test
     public void test() {
-        new MainPage()
+        new LoginPage()
                 .inputLoginAndPassword();
     }
 
