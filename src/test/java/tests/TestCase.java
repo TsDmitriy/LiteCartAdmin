@@ -8,7 +8,7 @@ import pages.GoToLoginPage;
 import pages.MainPage;
 
 
-public class Authorization {
+public class TestCase {
 
     @BeforeClass
     public static void startDriver() {
