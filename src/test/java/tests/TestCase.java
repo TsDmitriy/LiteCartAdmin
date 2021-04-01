@@ -9,7 +9,6 @@ import pages.MainPage;
 
 
 public class TestCase {
-
     @BeforeClass
     public static void startDriver() {
         new GoToLoginPage().getpage();
@@ -19,7 +18,7 @@ public class TestCase {
     @Test
     public void test() {
         new MainPage()
-                .searchTV();
+                .inputLoginAndPassword();
     }
 
     @AfterClass
