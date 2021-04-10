@@ -1,7 +1,10 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -37,6 +40,23 @@ public class Helpers {
                 .until(ExpectedConditions.presenceOfElementLocated(by));
        return Driver.getInstance().findElement(by);
     }
+
+    /**
+     * Метод проверет виден ли элемент в дом, если виден возвращает элемент
+     * @return найденный WebElement
+     */
+    public static void waitLoadPage() {
+        new WebDriverWait(Driver.getInstance(), 30)
+                .until(ExpectedConditions
+                        .jsReturnsValue("return document.readyState==\"complete\";"));
+
+    }
+
+    public static void clickJs(By by) {
+        JavascriptExecutor executor = (JavascriptExecutor) Driver.getInstance();
+        executor.executeScript("arguments[0].click();", Helpers.presenceOfElementLocated(by));
+    }
+
 }
 
 

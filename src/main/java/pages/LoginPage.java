@@ -4,6 +4,10 @@ import org.openqa.selenium.By;
 
 public class LoginPage {
 
+    public LoginPage() {
+        Helpers.waitLoadPage();
+    }
+
     private By fieldUsername = By.name("username");
     private By fieldPassword = By.name("password");
     private String userName= "admin";
