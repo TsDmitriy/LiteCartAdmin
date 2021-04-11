@@ -3,7 +3,7 @@ package pages;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
-public class OrderTotalPage {
+public class OrderTotalPage extends ModulesPage{
 
     public OrderTotalPage() {
         Helpers.waitLoadPage();
@@ -14,10 +14,6 @@ public class OrderTotalPage {
     public OrderTotalPage checkHeadingOrderTotalPage() {
         Assert.assertEquals("Некорректный заголовок страницы", "Order Total Modules", Helpers.presenceOfElementLocated(headingPage).getText());
         return this;
-    }
-
-    public ModulesPage returnModulesPage() {
-        return new ModulesPage();
     }
 
 }
