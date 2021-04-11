@@ -3,7 +3,7 @@ package pages;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
-public class VQmodsPage {
+public class VQmodsPage extends MainPage {
     public VQmodsPage() {
         Helpers.waitLoadPage();
     }

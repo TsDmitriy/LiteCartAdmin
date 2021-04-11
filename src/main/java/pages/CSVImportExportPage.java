@@ -3,7 +3,7 @@ package pages;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
-public class CSVImportExportPage {
+public class CSVImportExportPage extends CatalogPage{
 
     public CSVImportExportPage() {
         Helpers.waitLoadPage();
@@ -15,9 +15,4 @@ public class CSVImportExportPage {
         Assert.assertEquals("Некорректный заголовок страницы", "CSV Import/Export", Helpers.presenceOfElementLocated(headingPage).getText());
         return this;
     }
-
-    public CatalogPage returnCatalogPage() {
-        return new CatalogPage();
-    }
-
 }

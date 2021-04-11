@@ -3,7 +3,7 @@ package pages;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
-public class SoldOutStatusesPage {
+public class SoldOutStatusesPage extends CatalogPage{
 
     public SoldOutStatusesPage() {
         Helpers.waitLoadPage();
@@ -16,9 +16,4 @@ public class SoldOutStatusesPage {
         Assert.assertEquals("Некорректный заголовок страницы", "Sold Out Statuses", Helpers.presenceOfElementLocated(headingPage).getText());
         return this;
     }
-    public CatalogPage returnCatalogPage() {
-        return new CatalogPage();
-    }
-
-
 }

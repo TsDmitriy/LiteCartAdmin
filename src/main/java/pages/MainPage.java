@@ -10,7 +10,6 @@ public class MainPage {
 
     private By appearence = By.xpath("//span[contains(.,'Appearence')]");
     private By сatalog = By.xpath("//span[contains(.,'Catalog')]");
-    private By logoType = By.id("doc-logotype");
     private By countries = By.xpath("//span[contains(.,'Countries')]");
     private By currencies = By.xpath("//span[contains(.,\"Currencies\")]");
     private By customers = By.xpath("//span[contains(.,\"Customers\")]");
@@ -32,10 +31,6 @@ public class MainPage {
         return new AppearencePage();
     }
 
-    public LogoTypePage goToLogotypePage() {
-        Helpers.click(logoType);
-        return new LogoTypePage();
-    }
 
     public CatalogPage goToCatalogPage() {
         Helpers.clickJs(сatalog);
@@ -107,7 +102,7 @@ public class MainPage {
         return new TranslationsPage();
     }
 
-    public UsersPage goToScanUsersPage() {
+    public UsersPage goToUsersPage() {
         Helpers.click(users);
         return new UsersPage();
     }

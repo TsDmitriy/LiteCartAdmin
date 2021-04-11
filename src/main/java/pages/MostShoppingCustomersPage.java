@@ -3,7 +3,7 @@ package pages;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
-public class MostShoppingCustomersPage {
+public class MostShoppingCustomersPage extends ReportsPages {
 
     public MostShoppingCustomersPage() {
         Helpers.waitLoadPage();

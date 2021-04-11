@@ -3,7 +3,7 @@ package pages;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
-public class QuantityUnitsPage {
+public class QuantityUnitsPage extends CatalogPage{
 
     public QuantityUnitsPage() {
         Helpers.waitLoadPage();
@@ -13,10 +13,6 @@ public class QuantityUnitsPage {
     public QuantityUnitsPage checkHeadingQuantityUnitsPage() {
         Assert.assertEquals("Некорректный заголовок страницы", "Quantity Units", Helpers.presenceOfElementLocated(headingPage).getText());
         return this;
-    }
-
-    public CatalogPage returnCatalogPage() {
-        return new CatalogPage();
     }
 
 }

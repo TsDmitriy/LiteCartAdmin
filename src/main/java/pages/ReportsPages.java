@@ -3,7 +3,7 @@ package pages;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
-public class ReportsPages {
+public class ReportsPages extends MainPage{
 
     public ReportsPages() {
         Helpers.waitLoadPage();
@@ -27,9 +27,5 @@ public class ReportsPages {
     public MostShoppingCustomersPage goToMostShoppingCustomersPage() {
         Helpers.click(mostShoppingCustomers);
         return new MostShoppingCustomersPage();
-    }
-
-    public MainPage returnMainPage() {
-        return new MainPage();
     }
 }

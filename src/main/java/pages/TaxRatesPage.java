@@ -3,7 +3,7 @@ package pages;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
-public class TaxRatesPage {
+public class TaxRatesPage  extends TaxPage{
     public TaxRatesPage() {
         Helpers.waitLoadPage();
     }
@@ -13,10 +13,4 @@ public class TaxRatesPage {
         Assert.assertEquals("Некорректный заголовок страницы", "Tax Rates", Helpers.presenceOfElementLocated(headingPage).getText());
         return this;
     }
-
-    public TaxPage returnTaxPage() {
-        return new TaxPage();
-    }
-
-
 }

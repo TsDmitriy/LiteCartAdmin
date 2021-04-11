@@ -3,7 +3,7 @@ package pages;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
-public class AdvancedPage {
+public class AdvancedPage extends SettingsPage{
 
     public AdvancedPage() {
         Helpers.waitLoadPage();

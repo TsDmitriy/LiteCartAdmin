@@ -3,7 +3,7 @@ package pages;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
-public class MostSoldProductsPage {
+public class MostSoldProductsPage extends ReportsPages {
 
     public MostSoldProductsPage() {
         Helpers.waitLoadPage();
@@ -15,6 +15,7 @@ public class MostSoldProductsPage {
         Assert.assertEquals("Некорректный заголовок страницы", "Most Sold Products", Helpers.presenceOfElementLocated(headingPage).getText());
         return this;
     }
+
     public ReportsPages returnReportsPages() {
         return new ReportsPages();
     }

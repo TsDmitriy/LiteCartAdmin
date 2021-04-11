@@ -3,7 +3,7 @@ package pages;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
-public class ModulesPage {
+public class ModulesPage extends MainPage{
 
     public ModulesPage() {
         Helpers.waitLoadPage();
@@ -51,9 +51,5 @@ public class ModulesPage {
     public OrderActionPage goToOrderActionPage()  {
         Helpers.click(orderAction);
         return new OrderActionPage();
-    }
-
-    public MainPage returnMainPage() {
-        return new MainPage();
     }
 }

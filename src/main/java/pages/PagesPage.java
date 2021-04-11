@@ -3,7 +3,7 @@ package pages;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
-public class PagesPage {
+public class PagesPage extends MainPage{
 
     public PagesPage() {
         Helpers.waitLoadPage();
@@ -14,8 +14,5 @@ public class PagesPage {
     public PagesPage checkHeadingPages() {
         Assert.assertEquals("Некорректный заголовок страницы", "Pages", Helpers.presenceOfElementLocated(headingPage).getText());
         return this;
-    }
-    public MainPage returnMainPage() {
-        return new MainPage();
     }
 }

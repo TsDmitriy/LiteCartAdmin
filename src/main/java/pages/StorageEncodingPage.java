@@ -3,7 +3,7 @@ package pages;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
-public class StorageEncodingPage {
+public class StorageEncodingPage extends LanguagesPage{
 
     public StorageEncodingPage() {
         Helpers.waitLoadPage();
@@ -15,9 +15,4 @@ public class StorageEncodingPage {
         Assert.assertEquals("Некорректный заголовок страницы", "Storage Encoding", Helpers.presenceOfElementLocated(headingPage).getText());
         return this;
     }
-
-    public LanguagesPage returnLanguagesPage() {
-        return new LanguagesPage();
-    }
-
 }

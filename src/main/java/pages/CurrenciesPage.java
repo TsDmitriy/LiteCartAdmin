@@ -3,7 +3,7 @@ package pages;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
-public class CurrenciesPage {
+public class CurrenciesPage extends MainPage{
 
     public CurrenciesPage() {
         Helpers.waitLoadPage();

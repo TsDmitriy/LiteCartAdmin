@@ -3,7 +3,7 @@ package pages;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
-public class TranslationsPage {
+public class TranslationsPage extends MainPage{
      public TranslationsPage() {
         Helpers.waitLoadPage();
     }
@@ -27,8 +27,4 @@ public class TranslationsPage {
         Helpers.click(cSVImportExport);
         return new TranslationsCSVImportExportPage();
     }
-    public MainPage returnMainPage() {
-        return new MainPage();
-    }
-
 }

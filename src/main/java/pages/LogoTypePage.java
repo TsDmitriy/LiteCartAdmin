@@ -3,7 +3,7 @@ package pages;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
-public class LogoTypePage {
+public class LogoTypePage extends MainPage {
 
     public LogoTypePage() {
         Helpers.waitLoadPage();
@@ -15,9 +15,6 @@ public class LogoTypePage {
     public LogoTypePage checkHeadingLogotypePage() {
         Assert.assertEquals("Некорректный заголовок страницы", "Logotype", Helpers.presenceOfElementLocated(headingPage).getText());
         return this;
-    }
-    public MainPage returnMainPage() {
-        return new MainPage();
     }
 
 }

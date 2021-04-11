@@ -3,7 +3,7 @@ package pages;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
-public class CatalogPage {
+public class CatalogPage extends MainPage{
 
     public CatalogPage() {
         Helpers.waitLoadPage();
@@ -63,10 +63,6 @@ public class CatalogPage {
     public CSVImportExportPage goToCSVImportExportPage() {
         Helpers.click(cSVImportExport);
         return new CSVImportExportPage();
-    }
-
-    public MainPage returnMainPage() {
-        return new MainPage();
     }
 
 }

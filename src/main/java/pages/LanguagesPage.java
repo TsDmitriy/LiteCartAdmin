@@ -3,7 +3,7 @@ package pages;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
-public class LanguagesPage {
+public class LanguagesPage extends MainPage{
 
     public LanguagesPage() {
         Helpers.waitLoadPage();
@@ -22,9 +22,4 @@ public class LanguagesPage {
         Helpers.click(storageEncoding);
         return new StorageEncodingPage();
     }
-
-    public MainPage returnMainPage() {
-        return new MainPage();
-    }
-
 }

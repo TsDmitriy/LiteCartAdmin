@@ -3,7 +3,7 @@ package pages;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
-public class OrdersPage {
+public class OrdersPage extends MainPage{
 
     public OrdersPage() {
         Helpers.waitLoadPage();

@@ -3,7 +3,7 @@ package pages;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
-public class ManufacturersPage {
+public class ManufacturersPage extends CatalogPage{
 
     public ManufacturersPage() {
         Helpers.waitLoadPage();
@@ -15,10 +15,4 @@ public class ManufacturersPage {
         Assert.assertEquals("Некорректный заголовок страницы", "Manufacturers", Helpers.presenceOfElementLocated(headingPage).getText());
         return this;
     }
-
-    public CatalogPage returnCatalogPage() {
-        return new CatalogPage();
-    }
-
-
 }

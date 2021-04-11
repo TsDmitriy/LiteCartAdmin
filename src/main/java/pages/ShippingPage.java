@@ -3,7 +3,7 @@ package pages;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
-public class ShippingPage {
+public class ShippingPage extends ModulesPage{
 
     public ShippingPage() {
         Helpers.waitLoadPage();
@@ -15,8 +15,4 @@ public class ShippingPage {
         Assert.assertEquals("Некорректный заголовок страницы", "Shipping Modules", Helpers.presenceOfElementLocated(headingPage).getText());
         return this;
     }
-    public ModulesPage returnModulesPage() {
-        return new ModulesPage();
-    }
-
 }

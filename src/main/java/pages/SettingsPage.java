@@ -3,7 +3,7 @@ package pages;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
-public class SettingsPage {
+public class SettingsPage extends MainPage{
     public SettingsPage() {
         Helpers.waitLoadPage();
     }
@@ -55,9 +55,5 @@ public class SettingsPage {
     public SecurityPage goToSecurityPage () {
         Helpers.click(security);
         return new SecurityPage();
-    }
-
-    public MainPage returnMainPage() {
-        return new MainPage();
     }
 }

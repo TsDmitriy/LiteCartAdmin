@@ -3,7 +3,7 @@ package pages;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
-public class DefaultsPage {
+public class DefaultsPage extends SettingsPage{
 
     public DefaultsPage() {
         Helpers.waitLoadPage();

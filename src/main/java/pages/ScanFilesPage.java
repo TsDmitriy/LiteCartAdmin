@@ -3,7 +3,7 @@ package pages;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
-public class ScanFilesPage {
+public class ScanFilesPage extends TranslationsPage{
     public ScanFilesPage() {
         Helpers.waitLoadPage();
     }
@@ -12,10 +12,6 @@ public class ScanFilesPage {
     public ScanFilesPage checkHeadingScanFilesPage() {
         Assert.assertEquals("Некорректный заголовок страницы", "Scan Files For Translations", Helpers.presenceOfElementLocated(headingPage).getText());
         return this;
-    }
-
-    public TranslationsPage returnTranslationsPage() {
-        return new TranslationsPage();
     }
 
 }

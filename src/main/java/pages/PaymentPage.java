@@ -3,7 +3,7 @@ package pages;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
-public class PaymentPage {
+public class PaymentPage extends ModulesPage{
 
     public PaymentPage() {
         Helpers.waitLoadPage();
@@ -15,9 +15,4 @@ public class PaymentPage {
         Assert.assertEquals("Некорректный заголовок страницы", "Payment Modules", Helpers.presenceOfElementLocated(headingPage).getText());
         return this;
     }
-
-    public ModulesPage returnModulesPage() {
-        return new ModulesPage();
-    }
-
 }

@@ -3,7 +3,7 @@ package pages;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
-public class TaxPage {
+public class TaxPage extends MainPage{
     public TaxPage() {
         Helpers.waitLoadPage();
     }
@@ -20,9 +20,4 @@ public class TaxPage {
         Helpers.click(taxRates);
         return new TaxRatesPage();
     }
-
-    public MainPage returnMainPage() {
-        return new MainPage();
-    }
-
 }

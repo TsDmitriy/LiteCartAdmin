@@ -3,7 +3,7 @@ package pages;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
-public class GeoZonesPage {
+public class GeoZonesPage extends MainPage{
 
     public GeoZonesPage() {
         Helpers.waitLoadPage();
@@ -15,10 +15,5 @@ public class GeoZonesPage {
         Assert.assertEquals("Некорректный заголовок страницы", "Geo Zones", Helpers.presenceOfElementLocated(headingPage).getText());
         return this;
     }
-
-    public MainPage returnMainPage() {
-        return new MainPage();
-    }
-
 }
 
