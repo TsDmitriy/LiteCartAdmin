@@ -10,7 +10,7 @@ public class MainPage {
     private By submenu = By.xpath("//a/following-sibling::ul/li/a");
     private By headingPage = By.xpath("//h1");
 
-    public MainPage clickMenu() {
+    public MainPage clickMenuAndCheckHeadingPage() {
 
         List<WebElement> menuList = new ArrayList<>();
         menuList.addAll(Driver.getInstance().findElements(menuAll));

@@ -7,6 +7,6 @@ public class TestTask7 extends TestBase{
     @Test
     public void test(){
         new LoginPage().inputLoginAndPassword()
-                .clickMenu();
+                .clickMenuAndCheckHeadingPage();
     }
 }
