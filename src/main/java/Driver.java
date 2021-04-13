@@ -1,9 +1,5 @@
-package pages;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
-import java.util.concurrent.TimeUnit;
 
 public class Driver {
 
@@ -24,8 +20,9 @@ public class Driver {
      */
     public static WebDriver getInstance() {
         if (instance == null) {
+
             System.setProperty("webdriver.chrome.driver", "C:\\chromedriver_win32\\chromedriver.exe");
-            instance = (WebDriver) new ChromeDriver();
+            instance =  new ChromeDriver();
             instance.manage().window().maximize();
         }
         return instance;
