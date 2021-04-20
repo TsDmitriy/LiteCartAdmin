@@ -4,11 +4,12 @@ import org.openqa.selenium.WebElement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainPage {
+public class MainPage<countries> {
 
     private By menuAll = By.xpath("//*[@id=\"app-\"]/a");
     private By submenu = By.xpath("//a/following-sibling::ul/li/a");
     private By headingPage = By.xpath("//h1");
+    private By countries = By.xpath("//*[@href=\"http://localhost/litecart/admin/?app=countries&doc=countries\"]");
 
     public MainPage clickMenuAndCheckHeadingPage() {
 
@@ -37,6 +38,11 @@ public class MainPage {
 
         }
         return this;
+    }
+
+    public CountriesPage goToCountriesPage() {
+        Helpers.clickJs(countries);
+        return new CountriesPage();
     }
 
 }

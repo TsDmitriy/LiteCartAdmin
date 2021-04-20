@@ -64,6 +64,23 @@ public class Helpers {
                 .until(ExpectedConditions.presenceOfElementLocated(by));
         return Driver.getInstance().findElement(by);
     }
+
+    /**
+     * Метод кликает по элементу с попощью js
+     * @param by путь до элемента в DOM
+     */
+    public static void clickJs(By by) {
+        WebElement webElement= Helpers.presenceOfElementLocated(by);
+        JavascriptExecutor executor = (JavascriptExecutor) Driver.getInstance();
+        executor.executeScript("arguments[0].click();", webElement);
+    }
+
+    public static void newOpenWindow() {
+        JavascriptExecutor executor = (JavascriptExecutor) Driver.getInstance();
+        executor.executeScript("window.open('');");
+
+    }
+
 }
 
 
