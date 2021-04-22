@@ -10,6 +10,7 @@ public class MainPage<countries> {
     private By submenu = By.xpath("//a/following-sibling::ul/li/a");
     private By headingPage = By.xpath("//h1");
     private By countries = By.xpath("//*[@href=\"http://localhost/litecart/admin/?app=countries&doc=countries\"]");
+    private By catalog = By.xpath("//*[@href=\"http://localhost/litecart/admin/?app=catalog&doc=catalog\"]");
 
     public MainPage clickMenuAndCheckHeadingPage() {
 
@@ -43,6 +44,11 @@ public class MainPage<countries> {
     public CountriesPage goToCountriesPage() {
         Helpers.clickJs(countries);
         return new CountriesPage();
+    }
+
+    public CatalogPage goToCatalogPage() {
+        Helpers.clickJs(catalog);
+        return new CatalogPage();
     }
 
 }
