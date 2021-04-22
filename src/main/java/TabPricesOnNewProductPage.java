@@ -14,9 +14,8 @@ public class TabPricesOnNewProductPage {
     private By priseEUR = By.name("prices[EUR]");
 
     private By saveButton = By.name("save");
-    private By notice = By.xpath("//*[@class=\"notice success\"][text()=' Changes were successfully saved.']");
 
-    public TabPricesOnNewProductPage fillingFieldsProductOnTabGeneral() {
+    public CatalogPage fillingFieldsProductOnTabGeneral() {
         Helpers.presenceOfElementLocated(purchasePriceSum).clear();
         Helpers.sendKeys(purchasePriceSum, "20");
         Select select = new Select(Helpers.presenceOfElementLocated(purchasePriceСurrency));
@@ -24,9 +23,9 @@ public class TabPricesOnNewProductPage {
         Helpers.sendKeys(priseUSD, "20");
         Helpers.sendKeys(priseEUR, "20");
         Helpers.click(saveButton);
-        Helpers.presenceOfElementLocated(notice);
-        return this;
+        return new CatalogPage();
     }
+
 
     public static Integer generateRandomValue() {
         Random random = new Random();
@@ -34,9 +33,4 @@ public class TabPricesOnNewProductPage {
         return number;
     }
 
-    public LiteCart goToLiteCart () {
-        String url = "http://localhost/litecart/en/";
-        Driver.getInstance().get(url);
-        return new LiteCart();
-    }
 }

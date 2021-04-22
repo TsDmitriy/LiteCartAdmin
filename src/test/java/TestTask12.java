@@ -15,8 +15,10 @@ public class TestTask12 extends TestBase{
                 .fillingFieldsProductOnTabGeneral()
                 .goToTabGeneralOnNewProductPage()
                 .fillingFieldsProductOnTabGeneral()
+                .checkNoticeAboutGoodCreateProduct()
+                .checkGoodCreateProductInCatalog()
                 .goToLiteCart()
-                .checkMyProduct();
+                .checkMyProductInLiteCart();
 
 
     }

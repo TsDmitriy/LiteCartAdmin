@@ -8,6 +8,6 @@ public class LiteCart {
     private By query = By.name("query");
     private By name = By.className("name");
 
-    public void checkMyProduct() {
+    public void checkMyProductInLiteCart() {
         Helpers.presenceOfElementLocated(By.xpath("//*[@class=\"name\"][text()=\""+Stash.getValue("myProduct") +"\"]"));    }
 }
