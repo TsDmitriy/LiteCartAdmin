@@ -1,8 +1,12 @@
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class NewCountryPage {
     private By href = By.xpath("//*[@id=\"content\"]//table//a[contains(@target,'_blank')]");
@@ -12,16 +16,21 @@ public class NewCountryPage {
         listHref.addAll(Driver.getInstance().findElements(href));
 
         for(WebElement link : listHref) {
-            String mainWindow = Driver.getInstance().getWindowHandle();
+            String mainWindowHandle = Driver.getInstance().getWindowHandle();
+            Set<String> oldWindowsSet = Driver.getInstance().getWindowHandles();
             link.click();
-            List<String> handle = new ArrayList<>(Driver.getInstance().getWindowHandles());
-             for (int i = 0 ;i<handle.size();i++) {
-                 if (handle.get(i).equals(mainWindow))
-                     handle.remove(i);
-             }
-            Driver.getInstance().switchTo().window(handle.get(0));
+            String newWindowHandle = (new WebDriverWait(Driver.getInstance(), 15))
+                    .until(new ExpectedCondition<String>() {
+                               public String apply(WebDriver driver) {
+                                   Set<String> newWindowsSet = driver.getWindowHandles();
+                                   newWindowsSet.removeAll(oldWindowsSet);
+                                   return newWindowsSet.size() > 0 ?
+                                           newWindowsSet.iterator().next() : null;
+                               }
+                           });
+            Driver.getInstance().switchTo().window(newWindowHandle);
             Driver.getInstance().close();
-            Driver.getInstance().switchTo().window(mainWindow);
+            Driver.getInstance().switchTo().window(mainWindowHandle);
         }
         return this;
     }
