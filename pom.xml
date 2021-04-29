@@ -25,5 +25,18 @@
             <artifactId>junit</artifactId>
             <version>4.13.2</version>
         </dependency>
+
+        <dependency>
+            <groupId>net.lightbody.bmp</groupId>
+            <artifactId>browsermob-core</artifactId>
+            <version>2.1.5</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.lightbody.bmp</groupId>
+            <artifactId>browsermob-core</artifactId>
+            <version>2.1.5</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 </project>

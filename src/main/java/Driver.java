@@ -1,13 +1,20 @@
+import net.lightbody.bmp.BrowserMobProxy;
+import net.lightbody.bmp.BrowserMobProxyServer;
+import net.lightbody.bmp.client.ClientUtil;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.events.AbstractWebDriverEventListener;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 public class Driver {
-
-    private static EventFiringWebDriver instance;
+    public static BrowserMobProxy proxy ;
+    private static ChromeDriver instance;
 
 
     public static void setnull() {
@@ -39,11 +46,16 @@ public class Driver {
      * @return instance
      */
     public static WebDriver getInstance() {
-        if (instance == null) {
 
+        if (instance == null) {
+            proxy =new BrowserMobProxyServer();
+            Proxy seleniumProxy = ClientUtil.createSeleniumProxy(proxy);
+            proxy.start(0);
+            DesiredCapabilities capabilities = new DesiredCapabilities();
+            capabilities.setCapability(CapabilityType.PROXY, seleniumProxy);
             System.setProperty("webdriver.chrome.driver", "C:\\chromedriver_win32\\chromedriver.exe");
-            instance = new EventFiringWebDriver(new ChromeDriver());
-            instance.register(new MyListener());
+            instance = new ChromeDriver(new ChromeOptions().setProxy(seleniumProxy));
+//            instance.register(new MyListener());
             instance.manage().window().maximize();
         }
         return instance;

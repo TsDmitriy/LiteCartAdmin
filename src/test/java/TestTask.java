@@ -1,21 +1,16 @@
+import net.lightbody.bmp.core.har.Har;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
-
-import java.net.MalformedURLException;
-import java.net.URL;
 
 
 public class TestTask{
 
     @Test
-    public void test() throws MalformedURLException {
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.setCapability("browserVersion", "90");
-        chromeOptions.setCapability("platformName", "Windows");
-        WebDriver driver = new RemoteWebDriver(new URL("http://192.168.0.103:4444/wd/hub"), chromeOptions);
-
+    public void test() throws InterruptedException {
+        Driver.proxy.newHar();
+        Driver.getInstance().get("https://software-testing.ru/");
+        Thread.sleep(10000);
+        Har har=Driver.proxy.endHar();
+        har.getLog().getEntries().forEach(i-> System.out.println(i.getResponse().getStatus() + ":"+ i.getRequest().getUrl()));
+//        Driver.getInstance().manage().logs().get("browser").forEach(i-> System.out.println(i));
     }
 }

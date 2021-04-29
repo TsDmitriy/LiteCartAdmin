@@ -52,12 +52,13 @@ public class CatalogPage {
         }
         for (String href: productHrefList){
             Driver.getInstance().get(href);
-            getLogBrowser();
+//            getLogBrowser();
         }
 
         return this;
     }
     private void getLogBrowser() {
         Assert.assertEquals("Лог браузера содержит сообщения на странице " + Driver.getInstance().getCurrentUrl(),Driver.getInstance().manage().logs().get("browser").getAll().size(),0);
+        Driver.getInstance().manage().logs().get("browser").forEach(i-> System.out.println(i));
     }
 }

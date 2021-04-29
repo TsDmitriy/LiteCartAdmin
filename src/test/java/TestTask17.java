@@ -6,6 +6,7 @@ public class TestTask17 extends TestBase{
 
     @Test
     public void test() throws InterruptedException {
+
         new LoginPage()
                 .inputLoginAndPassword()
                 .goToCatalogPage()
