@@ -49,8 +49,8 @@ public class Driver {
 
         if (instance == null) {
             proxy =new BrowserMobProxyServer();
-            Proxy seleniumProxy = ClientUtil.createSeleniumProxy(proxy);
             proxy.start(0);
+            Proxy seleniumProxy = ClientUtil.createSeleniumProxy(proxy);
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability(CapabilityType.PROXY, seleniumProxy);
             System.setProperty("webdriver.chrome.driver", "C:\\chromedriver_win32\\chromedriver.exe");
