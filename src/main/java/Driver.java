@@ -54,7 +54,8 @@ public class Driver {
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability(CapabilityType.PROXY, seleniumProxy);
             System.setProperty("webdriver.chrome.driver", "C:\\chromedriver_win32\\chromedriver.exe");
-            instance = new ChromeDriver(new ChromeOptions().setProxy(seleniumProxy));
+            instance = new ChromeDriver(new ChromeOptions().setProxy(seleniumProxy).setAcceptInsecureCerts(true));
+            Driver.proxy.newHar();
 //            instance.register(new MyListener());
             instance.manage().window().maximize();
         }
